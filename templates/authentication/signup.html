@@ -1,0 +1,74 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+{% block title %} SignUp Page {% endblock %}
+
+{% block content %}
+
+<style>
+    .alert{
+        position: fixed;
+        margin-top: 3rem;
+        width: 80%;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        span{
+            color: #000;
+        }
+    }
+</style>
+
+ <!-- Navigation Bar section  -->
+    <section class="auth">
+        {% if messages %}
+        {% for msg in messages %}
+        <div class="alert alert-{{ msg.tags }} mx-auto" alert-dismissible fade show" role="alert">
+        <span>{{ msg }}</span>
+        </div>
+        {% endfor %}
+        {% endif %}
+   
+        <div class="wrapper">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h1>Registration</h1>
+                <div class="input-box">
+                    <div class="input-field">
+                        <input type="text" name="username"  placeholder="First Name" >
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="last_name" placeholder="Last Name" >
+                        <i class='bx bxs-user'></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <div class="input-field">
+                        <input type="email" name="email" placeholder="Email" >
+                        <i class='bx bxs-envelope' ></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="number" name="phone_number" placeholder="Phone Number">
+                        <i class='bx bxs-phone'></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <div class="input-field">
+                        <input type="password" name="password1" placeholder="Password">
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password2" placeholder="Confirm password">
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
+                </div>
+                <label for=""><input type="checkbox">I hereby declare that the above information provided is true and correct</label>
+                <p>Already have an account login <a href="{% url 'auth:login' %}">here</a></p>
+                <button class="btn" type="submit">Register</button>
+            </form>
+        </div>
+
+    </section>
+
+{% endblock %}

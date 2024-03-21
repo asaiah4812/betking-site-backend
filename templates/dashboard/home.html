@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+<style>
+    .alert{
+        position: fixed;
+        margin-top: 7rem;
+        width: 80%;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        span{
+            color: #000;
+            font-size: 15px;
+        }
+    }
+</style>
+
+
+    <!-- hero section Banner -->
+
+    <section class="banner1">
+         {% if messages %}
+        {% for msg in messages %}
+        <div class="alert alert-{{ msg.tags }} mx-auto"  alert-dismissible fade show" role="alert">
+        <span>{{ msg }}</span>
+        </div>
+        {% endfor %}
+        {% endif %}
+   
+
+    </section>
+
+    <!-- Join Button section -->
+
+    <div class="button">
+        <button>Join the earning team <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+
+    <!-- Free Trial section -->
+
+    <section class="free">
+        <div class="free__div">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <h2>Free Trial!</h2>
+            <p>Are you looking to start-up your 
+                own personal business as a Betking 
+                agent in Nigeria?
+            </p>
+            <a href="#">My Profile <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="free__div">
+            <i class="fa-solid fa-clipboard-question"></i>
+            <h2>Free Trial!</h2>
+            <p>Are you looking to start-up your 
+                own personal business as a Betking 
+                agent in Nigeria?
+            </p>
+            <a href="#">My Profile <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="free__div">
+            <i class="fa-solid fa-clipboard-question"></i>
+            <h2>Free Trial!</h2>
+            <p>Are you looking to start-up your 
+                own personal business as a Betking 
+                agent in Nigeria?
+            </p>
+            <a href="#">My Profile <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+    <section class="welcome">
+        <h1>Welcome to BetKing Master</h1>
+        <div class="welcome__inner">
+            <div class="welcome__left">
+                <img src="{% static 'images/betking.png' %}" alt="betking master">
+                <p>Are you looking to start-up your own personal business
+                     as a Betking agent in Nigeria? You’re probably wondering 
+                     where to start from. Not to worry, I got you covered. There
+                      are quite a lot of businesses that Nigerians can invest into, 
+                      and  to worry, I got you covered. There are quite a lot of 
+                      businesses that Nigerians can invest into, and There are
+                    being a Betking agent can be a very lucrative one of those 
+                    sinesses.am writing about this business idea because you can 
+                    do it. As long as There areThere areThere are to worry, I 
+                    got you covered. There are quite a lot of businesses that Nigerians can 
+                    invest into, and  to worry, I got you covered. There are 
+                    </p>
+            </div>
+            <div class="welcome__right">
+                <h2>The King is Here</h2>
+                <img src="{% static 'images/youtube.png' %}" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- weekly winning code section  -->
+
+    <section class="weekly">
+        <div class="weekly__left">
+            <h1>Weekly Winning Code</h1>
+            <ul>
+                <li><a href="#">Winning code for Saturday 29/05/2021</a></li>
+                <li><a href="#">Winning code for Saturday 22/05/2021</a></li>
+                <li><a href="#">Winning code for Thursday</a></li>
+                <li><a href="#">Winning code for Thursday Awqv3</a></li>
+                <li><a href="#">Winning code for Thursday ATZWF</a></li>
+                <li><a href="#">Winning code for Thursday</a></li>
+                <li><a href="#">Winning code for Friday</a></li>
+            </ul>
+        </div>
+        <div class="weekly__right">
+            <img src="{% static 'images/cover.png' %}" alt="">
+        </div>
+    </section>
+
+    <h1 class="benefit">Benefits of becoming an Agent through this platform</h1>
+
+    <section class="platform">
+        <img src="{% static 'images/Logo.svg' %}" alt="Logo">
+        <h2>
+            This platform was designed to give necessary support, 
+            courage and educate our new agents with additional benefits.
+        </h2>
+        <ol>
+            <li><a href="#">Free configuration of laptops.</a></li>
+            <li><a href="#"> Dedicated software and hardware engineers available.</a></li>
+            <li><a href="#">Free configuration and installation of thin client for booking.</a></li>
+            <li><a href="#">Free plasma television for you, once you refer 5 new agents to registered under this platform.</a></li>
+            <li><a href="#">Short duration for inspection of an outlet/shop</a></li>
+            <li><a href="#">Free registration for interested agent</a></li>
+        </ol>
+    </section>
+
+    <section class="unable">
+        <div class="unable__header">
+            <hr> <h2>UNABLE TO DECIDE?</h2> <hr>
+        </div>
+        <h3>Listing to stories of Other People that Used this Plat Form</h3>
+    </section>
+
+    <!-- swiper js slide animation section -->
+
+     <!-- --- Testimonials Section --- -->
+        <div class="testi_section">
+            <div class="testi_container">
+
+                <div class="testi_card">
+                    <img src="{% static 'images/quotation.png' %}" class="quote">
+                    <p>"What do you need to start a business? Three simple things know your product as better to me, and
+                        have a burning desire to succeed."</p>
+                    <div class="test_person">
+                        <img src="{% static 'images/profile2.png' %}" width="50px">
+                        <div class="name_desig">
+                            <h4>Penticost Smith</h4>
+                            <p>Full Stack Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi_card">
+                    <img src="{% static 'images/quotation.png' %}" class="quote">
+                    <p>"What do you need to start a business? Three simple things know your product as better to me, and
+                        have a burning desire to succeed."</p>
+                    <div class="test_person">
+                        <img src="{% static 'images/profile1.png' %}" width="50px">
+                        <div class="name_desig">
+                            <h4>Favour Philip</h4>
+                            <p>Product Designer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi_card">
+                    <img src="{% static 'images/quotation.png' %}" class="quote">
+                    <p>"What do you need to start a business? Three simple things know your product as better to me, and
+                        have a burning desire to succeed."</p>
+                    <div class="test_person">
+                        <img src="{% static 'images/profile4.png' %}" width="50px">
+                        <div class="name_desig">
+                            <h4>Dreamer </h4>
+                            <p>Software Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}

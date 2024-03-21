@@ -1,0 +1,56 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+{% block title %} SignUp Page {% endblock %}
+
+{% block content %}
+<style>
+    .alert{
+        position: fixed;
+        margin-top: 3rem;
+        width: 80%;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        span{
+            color: #000;
+            font-size: 15px;
+        }
+    }
+</style>
+
+ <!-- Navigation Bar section  -->
+    <section class="auth">
+
+        {% if messages %}
+        {% for msg in messages %}
+        <div class="alert alert-{{ msg.tags }} mx-auto"  alert-dismissible fade show" role="alert">
+        <span>{{ msg }}</span>
+        </div>
+        {% endfor %}
+        {% endif %}
+   
+        <div class="wrapper">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h1>Registration</h1>
+                <div class="input-box">
+                    <div class="input-field">
+                        <input type="text" name="username"  placeholder="Enter Username">
+                        <i class='bx bxs-envelope' ></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" placeholder="Enter Password">
+                        <i class='bx bxs-user'></i>
+                    </div>
+                </div>
+                
+                <label for=""><input type="checkbox">I hereby declare that the above information provided is true and correct</label>
+                <p>Don't have an account create one <a href="{% url 'auth:signup' %}">here</a></p>
+                <button class="btn" type="submit">Login</button>
+            </form>
+        </div>
+
+    </section>
+
+{% endblock %}

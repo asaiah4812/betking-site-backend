@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://api.fontshare.com/v2/css?f[]=montserrat@500,900,700,200,401,301,400,100,101,201,800,300,600,501&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+    <!-- screen blur divisions -->
+
+    <div class="blur"></div>
+    <div class="blur2"></div>
+
+    <!-- Navigation Bar section  -->
+
+    <nav class="nav">
+        <div class="nav-left">
+            <img src="{% static 'images/Logo.png' %}" alt="">
+        </div>
+        <div class="nav-center">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="agent_list.html">Agents</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="shops.html">Shop</a></li>
+                <li><a href="faqs.html">FAGS</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'auth:logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+            <a href="{% url 'auth:signup' %}"><i class="fa fa-user" aria-hidden="true"></i>SignUp</a>
+            <i class="fa fa-bars" onclick=OpenSidebar() id="onSideBar" aria-hidden="true"></i>
+        </div>
+    </nav>
+
+            <!-- sidebar section -->
+
+    <nav class="sidebar">
+        <ul>
+            <li><a class="close" onclick=CloseSideBar() href=""><i class="fa fa-times" aria-hidden="true"></i></a></li>   
+                <li><a href="index.html">Home</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="agent_list.html">Agent List</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="shops.html">Shop</a></li>
+                <li><a href="faqs.html">FAGS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+        <!-- footer betking section -->
+
+        <section class="footer">
+            <div class="footer__head">
+                <div class="head__left">
+                    <img src="{% static 'images/Logo.svg' %}" alt="logo">
+                    <br>
+                    <br>
+                    <p>
+                        You Most be atleast a 18yrs Old to Use our site.
+                        Don’t try it if you not a football fan we’hv got 
+                        get testimonies from our customer who are 
+                        using this plat form the right way 
+                    </p>
+                </div>
+                <div class="head__right">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="admin.html">Admin</a></li>
+                        <li><a href="agent_list.html">Agent List</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="shops.html">Shop</a></li>
+                        <li><a href="#">FAGS</a></li>
+                        <li><a href="#">logout</a></li>
+                        <li><a href="#">SignUp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="logos">
+                <img src="{% static 'images/Logo1.png' %}" alt="BetKing">
+                <img src="{% static 'images/logo2.png' %}" alt="Fifa">
+                <img src="{% static 'images/Logo3.png' %}" alt="BetKing">
+                <img src="{% static 'images/Logo4.png' %}" alt="BetKing">
+            </div>
+            <div class="socialclass">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-square-whatsapp"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-square-x-twitter"></i>
+            </div>
+        </section>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>
